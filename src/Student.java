@@ -1,6 +1,17 @@
 class Student {
     private String lastName;
     private int yearOfBirth;
-    private int estimation;
-    private double averageEst;
+
+    Student(String lastName, int yearOfBirth) {
+        this.lastName = lastName;
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    String getLastName() {
+        return lastName;
+    }
+
+    int getYearOfBirth() {
+        return yearOfBirth;
+    }
 }
