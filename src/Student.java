@@ -19,6 +19,10 @@ class Student {
         return lastName;
     }
 
+    int getYearOfBirth(){
+        return yearOfBirth;
+    }
+
     int getEst1() {
         return est1;
     }
