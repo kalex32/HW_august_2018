@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class RunStudentsAndEstimate {
     public static void main(String[] args) {
         Student[] students = new Student[3];
@@ -10,10 +6,11 @@ public class RunStudentsAndEstimate {
         students[2]=new Student("Примакин", 1999);
 
 
-        System.out.println(Arrays.toString(students));
+        //System.out.println(Arrays.toString(students));
 
         Estimation estimation = new Estimation();
         estimation.receiptOfEstimation(students);
+
     }
 
 

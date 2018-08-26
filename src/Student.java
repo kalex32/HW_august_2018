@@ -47,7 +47,7 @@ class Student {
         this.est3 = est3;
     }
 
-    double getAverageEst() {
+    private double getAverageEst() {
         return averageEst;
     }
 
@@ -57,14 +57,14 @@ class Student {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Student{");
-        sb.append("lastName='").append(lastName).append('\'');
-        sb.append(", yearOfBirth=").append(yearOfBirth);
-        sb.append(", est1=").append(est1);
-        sb.append(", est2=").append(est2);
-        sb.append(", est3=").append(est3);
-        sb.append(", averageEst=").append(averageEst);
-        sb.append('}');
+        final StringBuilder sb = new StringBuilder();
+        sb.append("Студент: фамилия - ").append(getLastName());
+        sb.append(", год рождения: ").append(getYearOfBirth());
+        sb.append(", оценка 1 =").append(getEst1());
+        sb.append(", оценка 2 =").append(getEst2());
+        sb.append(", оценка 3 =").append(getEst3());
+        sb.append(", средняя оценка =").append(getAverageEst());
+        sb.append("\n");
         return sb.toString();
     }
 }

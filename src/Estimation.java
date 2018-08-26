@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 class Estimation implements ListOfEstimation {
@@ -19,11 +18,18 @@ class Estimation implements ListOfEstimation {
             i.setAverageEst(setAverageEst(i.getEst1(), i.getEst2(), i.getEst3()));
 
         }
-        System.out.println(Arrays.toString(students));
+
+        for (Student i:students) {
+            System.out.println(i.toString());
+        }
     }
 
     private double setAverageEst(int a, int b, int c) {
-        final int i = (a + b + c) / 3;
+        double i = ((a + b + c) / 3);
+        System.out.println(i);
+        i*=100;
+        int f = (int)Math.round(i);
+        i=f/100;
         return i;
     }
 }
