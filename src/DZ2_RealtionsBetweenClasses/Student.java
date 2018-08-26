@@ -1,3 +1,5 @@
+package DZ2_RealtionsBetweenClasses;
+
 class Student {
     private String lastName;
     private int yearOfBirth;
@@ -9,17 +11,17 @@ class Student {
     Student(String lastName, int yearOfBirth) {
         this.lastName = lastName;
         this.yearOfBirth = yearOfBirth;
-        this.est1=0;
-        this.est2=0;
-        this.est3=0;
-        this.averageEst=0.0;
+        this.est1 = 0;
+        this.est2 = 0;
+        this.est3 = 0;
+        this.averageEst = 0.0;
     }
 
     String getLastName() {
         return lastName;
     }
 
-    int getYearOfBirth(){
+    int getYearOfBirth() {
         return yearOfBirth;
     }
 
