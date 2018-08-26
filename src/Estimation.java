@@ -24,11 +24,12 @@ class Estimation implements ListOfEstimation {
         }
     }
 
-    private double setAverageEst(int a, int b, int c) {
-        double i = ((a + b + c) / 3);
+    private double setAverageEst(double a, double b, double c) {
+        double i = (a + b + c) / 3;
         System.out.println(i);
         i*=100;
-        int f = (int)Math.round(i);
+        System.out.println(i);
+        double f = Math.round(i);
         i=f/100;
         return i;
     }

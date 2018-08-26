@@ -1,9 +1,9 @@
 class Student {
     private String lastName;
     private int yearOfBirth;
-    private int est1;
-    private int est2;
-    private int est3;
+    private double est1;
+    private double est2;
+    private double est3;
     private double averageEst;
 
     Student(String lastName, int yearOfBirth) {
@@ -23,7 +23,7 @@ class Student {
         return yearOfBirth;
     }
 
-    int getEst1() {
+    double getEst1() {
         return est1;
     }
 
@@ -31,7 +31,7 @@ class Student {
         this.est1 = est1;
     }
 
-    int getEst2() {
+    double getEst2() {
         return est2;
     }
 
@@ -39,7 +39,7 @@ class Student {
         this.est2 = est2;
     }
 
-    int getEst3() {
+    double getEst3() {
         return est3;
     }
 
