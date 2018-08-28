@@ -2,12 +2,16 @@ package DZ2_Exceptions;
 
 class Administrator implements Employees{
     @Override
-    public void addGoodsToShop() {
+    public void toAddGoodsToShop() {
 
     }
 
     @Override
-    public void registrationOfSale() {
+    public void toRegisterSale() {
+
+    }
+
+    void toAddToTheBlackList(){
 
     }
 }
