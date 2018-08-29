@@ -1,5 +1,6 @@
 package DZ2_Exceptions;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 class Administrator implements Employees{
@@ -21,10 +22,12 @@ class Administrator implements Employees{
 
     @Override
     public void toAddGoodsToShop() {
+        ArrayList<Product> products = new ArrayList<>();
         Product product = new Product();
         product.quantity();
         product.packingSize();
         product.shipping();
+        products.add(product);
 
     }
 
