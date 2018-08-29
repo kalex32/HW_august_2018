@@ -15,6 +15,8 @@ class Shop {
             Scanner scanner = new Scanner(System.in);
             try {
                 switch (scanner.nextInt()) {
+                    default:
+                        break;
                     case 1:
                         Client client = new Client();
                         System.out.println("Выберите пункт меню:" + "\n" +
@@ -24,11 +26,14 @@ class Shop {
                         switch (scanner.nextInt()) {
                             case 1:
                                 client.toOrder();
+                                break;
                             case 2:
                                 client.toPay();
+                                break;
                             case 3:
                                 System.exit(0);
                         }
+                        break;
                     case 2:
                         System.out.println("Выберите пункт меню:" + "\n" +
                                 "1. Добавить товар в магазин" + "\n" +
@@ -39,13 +44,17 @@ class Shop {
                         switch (scanner.nextInt()) {
                             case 1:
                                 administrator.toAddGoodsToShop();
+                                break;
                             case 2:
                                 administrator.toRegisterSale();
+                                break;
                             case 3:
                                 administrator.toAddToTheBlackList();
+                                break;
                             case 4:
                                 System.exit(0);
                         }
+                        break;
                     case 3:
                         System.exit(0);
                 }

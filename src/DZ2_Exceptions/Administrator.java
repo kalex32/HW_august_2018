@@ -3,10 +3,10 @@ package DZ2_Exceptions;
 import java.util.Scanner;
 
 class Administrator implements Employees{
-    String nameAdmin;
+    private String nameAdmin;
 
     {
-        System.out.println("Введите имя Админитсратора:");
+        System.out.println("Введите имя Администратора:");
     }
 
     private Scanner scanner = new Scanner(System.in);
@@ -15,8 +15,16 @@ class Administrator implements Employees{
         this.nameAdmin = scanner.nextLine();
     }
 
+    String getNameAdmin() {
+        return nameAdmin;
+    }
+
     @Override
     public void toAddGoodsToShop() {
+        Product product = new Product();
+        product.quantity();
+        product.packingSize();
+        product.shipping();
 
     }
 
