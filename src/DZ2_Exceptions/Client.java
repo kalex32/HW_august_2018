@@ -11,7 +11,7 @@ class Client implements Clients{
 
    private Scanner scanner = new Scanner(System.in);
 
-    public Client() {
+    Client() {
         this.nameClient = scanner.nextLine();
     }
 
