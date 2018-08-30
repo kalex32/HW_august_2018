@@ -3,6 +3,7 @@ package DZ2_Exceptions;
 import java.util.Scanner;
 
 class Product implements Goods {
+    private int id;
     private String productName;
     private int quantity;
     private int packingSize;
@@ -37,13 +38,26 @@ class Product implements Goods {
         this.packingSize = packingSize;
     }
 
+    int getId() {
+        return id;
+    }
+
+    void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "Товар {" +
-                "наименование='" + productName + '\'' +
-                ", количество=" + quantity +
-                ", упаовка=" + packingSize +
+        return "Товар" + getId() + " {" +
+                "наименование='" + getProductName() + '\'' +
+                ", количество=" + getQuantity() +
+                ", упаовка=" + getPackingSize() +
                 '}';
+    }
+
+    @Override
+    public void id() {
+        setId(getId()+1);
     }
 
     @Override

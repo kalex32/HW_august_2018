@@ -1,7 +1,6 @@
 package DZ2_Exceptions;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 class Administrator implements Employees{
@@ -26,6 +25,7 @@ class Administrator implements Employees{
         ArrayList<Product> products = new ArrayList<>();
         for (; ; ) {
             Product product = new Product();
+            product.id();
             product.quantity();
             product.packingSize();
             products.add(product);
