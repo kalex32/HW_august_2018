@@ -24,12 +24,19 @@ class Administrator implements Employees{
     @Override
     public void toAddGoodsToShop() {
         ArrayList<Product> products = new ArrayList<>();
-        Product product = new Product();
-        product.quantity();
-        product.packingSize();
-        products.add(product);
-        System.out.println(products.toString());
-
+        for (; ; ) {
+            Product product = new Product();
+            product.quantity();
+            product.packingSize();
+            products.add(product);
+            for (Product p : products) {
+                System.out.println(p.toString());
+            }
+            System.out.println("Добавить еще товар?:" + "\n" +
+                    "1. Добавить" + "\n" +
+                    "2. Нет");
+            if (scannerAdmin.nextInt() != 1)break;
+        }
     }
 
     @Override
