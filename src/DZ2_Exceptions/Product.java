@@ -6,7 +6,6 @@ class Product implements Goods {
     private String productName;
     private int quantity;
     private int packingSize;
-    private String shipping;
 
     {
         System.out.println("Введите наименование товара:");
@@ -38,12 +37,13 @@ class Product implements Goods {
         this.packingSize = packingSize;
     }
 
-    String getShipping() {
-        return shipping;
-    }
-
-    private void setShipping(String shipping) {
-        this.shipping = shipping;
+    @Override
+    public String toString() {
+        return "Товар {" +
+                "наименование='" + productName + '\'' +
+                ", количество=" + quantity +
+                ", упаовка=" + packingSize +
+                '}';
     }
 
     @Override
@@ -58,9 +58,4 @@ class Product implements Goods {
         setPackingSize(scannerProduct.nextInt());
     }
 
-    @Override
-    public void shipping() {
-        System.out.println("Введите регионы доставки:");
-        setShipping(scannerProduct.nextLine());
-    }
 }
