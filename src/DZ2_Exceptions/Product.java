@@ -12,10 +12,10 @@ class Product implements Goods {
         System.out.println("Введите наименование товара:");
     }
 
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scannerProduct = new Scanner(System.in);
 
     Product() {
-        this.productName = scanner.nextLine();
+        this.productName = scannerProduct.nextLine();
     }
 
     String getProductName() {
@@ -49,18 +49,18 @@ class Product implements Goods {
     @Override
     public void quantity() {
         System.out.println("Введите количество товара:");
-        setQuantity(scanner.nextInt());
+        setQuantity(scannerProduct.nextInt());
     }
 
     @Override
     public void packingSize() {
         System.out.println("Введите размер упаковки:");
-        setPackingSize(scanner.nextInt());
+        setPackingSize(scannerProduct.nextInt());
     }
 
     @Override
     public void shipping() {
         System.out.println("Введите регионы доставки:");
-        setShipping(scanner.nextLine());
+        setShipping(scannerProduct.nextLine());
     }
 }

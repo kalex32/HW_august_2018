@@ -9,10 +9,10 @@ class Client implements Clients{
         System.out.println("Введите имя");
     }
 
-   private Scanner scanner = new Scanner(System.in);
+   private Scanner scannerClient = new Scanner(System.in);
 
     Client() {
-        this.nameClient = scanner.nextLine();
+        this.nameClient = scannerClient.nextLine();
     }
 
     public String getNameClient() {

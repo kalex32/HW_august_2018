@@ -10,10 +10,10 @@ class Administrator implements Employees{
         System.out.println("Введите имя Администратора:");
     }
 
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scannerAdmin = new Scanner(System.in);
 
     Administrator() {
-        this.nameAdmin = scanner.nextLine();
+        this.nameAdmin = scannerAdmin.nextLine();
     }
 
     String getNameAdmin() {
