@@ -51,7 +51,7 @@ class Product implements Goods {
         return "Товар " + getId() + " (" +
                 "наименование='" + getProductName() + '\'' +
                 ", количество=" + getQuantity() +
-                ", упаовка=" + getPackingSize() +
+                ", упаковка=" + getPackingSize() +
                 ')';
     }
 
