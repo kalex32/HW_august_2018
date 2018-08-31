@@ -3,7 +3,7 @@ package DZ2_Exceptions;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Administrator implements Employees{
+class Administrator implements Employees {
     private String nameAdmin;
 
     {
@@ -25,17 +25,18 @@ class Administrator implements Employees{
         ArrayList<Product> products = new ArrayList<>();
         for (; ; ) {
             Product product = new Product();
-            product.id();
+            product.setId(product.getId()+products.size());
             product.quantity();
             product.packingSize();
             products.add(product);
             for (Product p : products) {
                 System.out.println(p.toString());
             }
+            System.out.println();
             System.out.println("Добавить еще товар?:" + "\n" +
                     "1. Добавить" + "\n" +
                     "2. Нет");
-            if (scannerAdmin.nextInt() != 1)break;
+            if (scannerAdmin.nextInt() != 1) break;
         }
     }
 
@@ -44,7 +45,7 @@ class Administrator implements Employees{
 
     }
 
-    void toAddToTheBlackList(){
+    void toAddToTheBlackList() {
 
     }
 }
