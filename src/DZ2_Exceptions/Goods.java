@@ -1,7 +1,7 @@
 package DZ2_Exceptions;
 
 interface Goods {
-    void quantity();
+//    void quantity();
     void packingSize();
     void price();
 }

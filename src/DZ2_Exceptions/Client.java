@@ -3,6 +3,8 @@ package DZ2_Exceptions;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static DZ2_Exceptions.Administrator.products;
+
 class Client implements Clients {
     private String nameClient;
 
@@ -21,16 +23,16 @@ class Client implements Clients {
     }
 
     ArrayList<Product> cart = new ArrayList<>();
-    Administrator administrator = new Administrator();
+//    Administrator administrator = new Administrator();
 
     @Override
     public void toOrder() {
         try {
             for (; ; ) {
                 System.out.println("Выберите, пожалуйста, товар:");
-                for (Product p : administrator.products) System.out.println(p.toString());
+                for (Product p : products) System.out.println(p.toString());
                 System.out.println();
-                cart.add(administrator.products.get(scannerClient.nextInt() - 1));
+                cart.add(products.get(scannerClient.nextInt() - 1));
                 System.out.println("Ваша корзина:");
                 System.out.println();
                 for (Product p : cart) System.out.println(p.toString());

@@ -5,7 +5,7 @@ import java.util.Scanner;
 class Product implements Goods {
     private int id = 1;
     private String productName;
-    private int quantity;
+//    private int quantity;
     private int packingSize;
     private int price;
 
@@ -23,13 +23,13 @@ class Product implements Goods {
         return productName;
     }
 
-    private void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    int getQuantity() {
-        return quantity;
-    }
+//    private void setQuantity(int quantity) {
+//        this.quantity = quantity;
+//    }
+//
+//    int getQuantity() {
+//        return quantity;
+//    }
 
     int getPackingSize() {
         return packingSize;
@@ -59,18 +59,18 @@ class Product implements Goods {
     public String toString() {
         return "Товар " + getId() + " (" +
                 "наименование='" + getProductName() + '\'' +
-                ", количество=" + getQuantity() +
+//                ", количество=" + getQuantity() +
                 ", упаковка=" + getPackingSize() +
                 ", цена=" + getPrice() +
                 ')';
     }
 
 
-    @Override
-    public void quantity() {
-        System.out.println("Введите количество товара:");
-        setQuantity(scannerProduct.nextInt());
-    }
+//    @Override
+//    public void quantity() {
+//        System.out.println("Введите количество товара:");
+//        setQuantity(scannerProduct.nextInt());
+//    }
 
     @Override
     public void packingSize() {

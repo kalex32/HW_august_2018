@@ -20,14 +20,14 @@ class Administrator implements Employees {
         return nameAdmin;
     }
 
-    ArrayList<Product> products = new ArrayList<>();
+    static ArrayList<Product> products = new ArrayList<>();
 
     @Override
     public void toAddGoodsToShop() {
         for (; ; ) {
             Product product = new Product();
-            product.setId(product.getId()+products.size());
-            product.quantity();
+            product.setId(product.getId() + products.size());
+//            product.quantity();
             product.packingSize();
             product.price();
             products.add(product);
@@ -48,4 +48,9 @@ class Administrator implements Employees {
     void toAddToTheBlackList() {
 
     }
+
+//    static ArrayList p() {
+//        for (Product p : products) System.out.println(p.toString());
+//        return;
+//    }
 }
