@@ -21,6 +21,11 @@ class Client implements Clients{
 
     @Override
     public void toOrder() {
+        Administrator administrator = new Administrator();
+        System.out.println("Выберите, пожалуйста, товар:");
+        for (Product p : administrator.products) {
+            System.out.println(p.toString());
+        }
 
     }
 

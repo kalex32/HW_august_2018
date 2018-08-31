@@ -7,6 +7,7 @@ class Product implements Goods {
     private String productName;
     private int quantity;
     private int packingSize;
+    private int price;
 
     {
         System.out.println("Введите наименование товара:");
@@ -46,12 +47,21 @@ class Product implements Goods {
         this.id = id;
     }
 
+    int getPrice() {
+        return price;
+    }
+
+    void setPrice(int price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "Товар " + getId() + " (" +
                 "наименование='" + getProductName() + '\'' +
                 ", количество=" + getQuantity() +
                 ", упаковка=" + getPackingSize() +
+                ", цена=" + getPrice() +
                 ')';
     }
 
@@ -66,6 +76,12 @@ class Product implements Goods {
     public void packingSize() {
         System.out.println("Введите размер упаковки:");
         setPackingSize(scannerProduct.nextInt());
+    }
+
+    @Override
+    public void price() {
+        System.out.println("Введите стоимость товара:");
+        setPrice(scannerProduct.nextInt());
     }
 
 }

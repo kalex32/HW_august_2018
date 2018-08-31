@@ -20,14 +20,16 @@ class Administrator implements Employees {
         return nameAdmin;
     }
 
+    ArrayList<Product> products = new ArrayList<>();
+
     @Override
     public void toAddGoodsToShop() {
-        ArrayList<Product> products = new ArrayList<>();
         for (; ; ) {
             Product product = new Product();
             product.setId(product.getId()+products.size());
             product.quantity();
             product.packingSize();
+            product.price();
             products.add(product);
             for (Product p : products) {
                 System.out.println(p.toString());
