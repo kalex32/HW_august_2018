@@ -82,6 +82,7 @@ class Shop {
             System.out.println();
             try {
                 switch (scannerShop.nextInt()) {
+                    default: toChoose();
                     case 1:
                         client.toOrder();
                         break;
