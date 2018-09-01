@@ -36,6 +36,10 @@ class Client implements Clients {
                 System.out.println("Ваша корзина:");
                 System.out.println();
                 for (Product p : cart) System.out.println(p.toString());
+                System.out.println();
+                System.out.println("Общая сумма заказа:");
+                System.out.println(sumCart(cart));
+                System.out.println();
                 System.out.println("Хотите добавить еще товар?:" + "\n" +
                         "1. Добавить" + "\n" +
                         "2. Нет");
@@ -48,5 +52,13 @@ class Client implements Clients {
         @Override
         public void toPay () {
 
+        }
+
+        int sumCart(ArrayList<Product> cart){
+        int sum=0;
+            for (Product i: cart) {
+                sum +=i.getPrice();
+            }
+            return sum;
         }
     }
