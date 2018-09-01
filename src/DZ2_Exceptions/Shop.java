@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 class Shop {
 
+    Scanner scannerShop = new Scanner(System.in);
+
     void toChoose() {
         for (; ; ) {
             System.out.println();
@@ -13,30 +15,30 @@ class Shop {
                     "2. Администратор" + "\n" +
                     "3. Выход");
             System.out.println();
-            Scanner scannerShop = new Scanner(System.in);
             try {
                 switch (scannerShop.nextInt()) {
                     default:
                         break;
                     case 1:
-                        Client client = new Client();
-                        System.out.println();
-                        System.out.println("Выберите пункт меню:" + "\n" +
-                                "1. Сделать заказ" + "\n" +
-                                "2. Оплатить" + "\n" +
-                                "3. Выход");
-                        System.out.println();
-                        switch (scannerShop.nextInt()) {
-                            case 1:
-                                client.toOrder();
-                                break;
-                            case 2:
-                                client.toPay();
-                                break;
-                            case 3:
-                                System.exit(0);
-                        }
-                        break;
+                        toChooseClient();
+//                        Client client = new Client();
+//                        System.out.println();
+//                        System.out.println("Выберите пункт меню:" + "\n" +
+//                                "1. Сделать заказ" + "\n" +
+//                                "2. Оплатить" + "\n" +
+//                                "3. Выход");
+//                        System.out.println();
+//                        switch (scannerShop.nextInt()) {
+//                            case 1:
+//                                client.toOrder();
+//                                break;
+//                            case 2:
+//                                client.toPay();
+//                                break;
+//                            case 3:
+//                                System.exit(0);
+//                        }
+//                        break;
                     case 2:
                         Administrator administrator = new Administrator();
                         System.out.println();
@@ -65,6 +67,33 @@ class Shop {
                 }
             } catch (InputMismatchException i) {
                 toChoose();
+            }
+        }
+    }
+
+    void toChooseClient() {
+        Client client = new Client();
+        for (; ; ) {
+            System.out.println();
+            System.out.println("Выберите пункт меню:" + "\n" +
+                    "1. Сделать заказ" + "\n" +
+                    "2. Оплатить" + "\n" +
+                    "3. Выход");
+            System.out.println();
+            try {
+                switch (scannerShop.nextInt()) {
+                    case 1:
+                        client.toOrder();
+                        break;
+                    case 2:
+                        client.toPay();
+                        break;
+                    case 3:
+                        System.exit(0);
+                        break;
+                }
+            } catch (InputMismatchException i) {
+                toChooseClient();
             }
         }
     }
