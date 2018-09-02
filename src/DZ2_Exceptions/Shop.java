@@ -1,7 +1,9 @@
 package DZ2_Exceptions;
 
 import java.util.InputMismatchException;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 class Shop {
 
@@ -71,31 +73,64 @@ class Shop {
         }
     }
 
+//    Set<Client> clients = new LinkedHashSet<>();
+
     void toChooseClient() {
         Client client = new Client();
-        for (; ; ) {
-            System.out.println();
-            System.out.println("Выберите пункт меню:" + "\n" +
-                    "1. Сделать заказ" + "\n" +
-                    "2. Оплатить" + "\n" +
-                    "3. Выход");
-            System.out.println();
-            try {
-                switch (scannerShop.nextInt()) {
-                    default: toChoose();
-                    case 1:
-                        client.toOrder();
-                        break;
-                    case 2:
-                        client.toPay();
-                        break;
-                    case 3:
-                        System.exit(0);
-                        break;
+//        if (clients.add(client)) {
+
+            for (; ; ) {
+                System.out.println();
+                System.out.println("Выберите пункт меню:" + "\n" +
+                        "1. Сделать заказ" + "\n" +
+                        "2. Оплатить" + "\n" +
+                        "3. Выход");
+                System.out.println();
+                try {
+                    switch (scannerShop.nextInt()) {
+                        default:
+                            toChoose();
+                        case 1:
+                            client.toOrder();
+                            break;
+                        case 2:
+                            client.toPay();
+                            break;
+                        case 3:
+                            System.exit(0);
+                            break;
+                    }
+                } catch (InputMismatchException i) {
+                    toChooseClient();
                 }
-            } catch (InputMismatchException i) {
-                toChooseClient();
             }
-        }
+//        }
+//        for (; ; ) {
+//            System.out.println();
+//            System.out.println("Выберите пункт меню:" + "\n" +
+//                    "1. Сделать заказ" + "\n" +
+//                    "2. Оплатить" + "\n" +
+//                    "3. Выход");
+//            System.out.println();
+//            try {
+//                switch (scannerShop.nextInt()) {
+//                    default:
+//                        toChoose();
+//                    case 1:
+//                        client.toOrder();
+//                        break;
+//                    case 2:
+//                        client.toPay();
+//                        break;
+//                    case 3:
+//                        System.exit(0);
+//                        break;
+//                }
+//            } catch (InputMismatchException i) {
+//                toChooseClient();
+//            }
+//        }
+
+
     }
 }

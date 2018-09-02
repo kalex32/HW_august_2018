@@ -1,12 +1,15 @@
 package DZ2_Exceptions;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 import static DZ2_Exceptions.Administrator.products;
 
 class Client implements Clients {
     private String nameClient;
+    ArrayList<Product> cart;
 
     {
         System.out.println("Введите имя");
@@ -16,13 +19,15 @@ class Client implements Clients {
 
     Client() {
         this.nameClient = scannerClient.nextLine();
+        cart = new ArrayList<>();
+
     }
 
     public String getNameClient() {
         return nameClient;
     }
 
-    ArrayList<Product> cart = new ArrayList<>();
+//    ArrayList<Product> cart = new ArrayList<>();
 //    Administrator administrator = new Administrator();
 
     @Override
@@ -43,22 +48,29 @@ class Client implements Clients {
                 System.out.println("Хотите добавить еще товар?:" + "\n" +
                         "1. Добавить" + "\n" +
                         "2. Нет");
-                if (scannerClient.nextInt() != 1) break;
+                if (scannerClient.nextInt() != 1) {
+                    cart.add(new Payment());
+                    for (Product p : cart) System.out.println(p.toString());
+                    break;
+                }
             }
-        } catch (IndexOutOfBoundsException i){
+        } catch (IndexOutOfBoundsException i) {
             toOrder();
         }
     }
-        @Override
-        public void toPay () {
 
-        }
+    @Override
+    public void toPay() {
 
-        int sumCart(ArrayList<Product> cart){
-        int sum=0;
-            for (Product i: cart) {
-                sum +=i.getPrice();
-            }
-            return sum;
-        }
     }
+
+    int sumCart(ArrayList<Product> cart) {
+        int sum = 0;
+        for (Product i : cart) {
+            sum += i.getPrice();
+        }
+        return sum;
+    }
+
+
+}
