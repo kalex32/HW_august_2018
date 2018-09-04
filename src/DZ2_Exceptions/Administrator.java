@@ -7,7 +7,7 @@ import static DZ2_Exceptions.Client.cart;
 
 class Administrator implements Employees {
     private String nameAdmin;
-    static ArrayList<String> blackList = new ArrayList<>();
+    static ArrayList<String> blackList;
 
 
     {
@@ -18,15 +18,13 @@ class Administrator implements Employees {
 
     Administrator() {
         this.nameAdmin = scannerAdmin.nextLine();
+        blackList = new ArrayList<>();
     }
 
     String getNameAdmin() {
         return nameAdmin;
     }
 
-//    public static ArrayList<String> getBlackList() {
-//        return blackList;
-//    }
 
     static ArrayList<Product> products = new ArrayList<>();
 
@@ -35,7 +33,6 @@ class Administrator implements Employees {
         for (; ; ) {
             Product product = new Product();
             product.setId(product.getId() + products.size());
-//            product.quantity();
             product.packingSize();
             product.price();
             products.add(product);
@@ -62,12 +59,7 @@ class Administrator implements Employees {
         toAddToTheBlackList(blackList);
     }
 
-    static void toAddToTheBlackList(ArrayList<String> blacklist) {
+    private static void toAddToTheBlackList(ArrayList<String> blacklist) {
         blacklist.add(Client.getNameClient());
     }
-
-//    static ArrayList p() {
-//        for (Product p : products) System.out.println(p.toString());
-//        return;
-//    }
 }

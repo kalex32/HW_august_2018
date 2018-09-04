@@ -1,9 +1,7 @@
 package DZ2_Exceptions;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 import static DZ2_Exceptions.Administrator.products;
 
@@ -23,12 +21,9 @@ class Client implements Clients {
 
     }
 
-    public static String getNameClient() {
+    static String getNameClient() {
         return nameClient;
     }
-
-    //    ArrayList<Product> cart = new ArrayList<>();
-//    Administrator administrator = new Administrator();
 
     @Override
     public void toOrder() {
@@ -48,11 +43,7 @@ class Client implements Clients {
                 System.out.println("Хотите добавить еще товар?:" + "\n" +
                         "1. Добавить" + "\n" +
                         "2. Нет");
-                if (scannerClient.nextInt() != 1) {
-//                    cart.add(new Payment());
-//                    for (Product p : cart) System.out.println(p.toString());
-                    break;
-                }
+                if (scannerClient.nextInt() != 1) break;
             }
         } catch (IndexOutOfBoundsException i) {
             toOrder();
@@ -61,11 +52,11 @@ class Client implements Clients {
 
     @Override
     public void toPay() {
-        System.out.println("Сумма Ваших покупок: "+sumCart(cart));
+        System.out.println("Сумма Ваших покупок: " + sumCart(cart));
         System.out.println("Введите сумму оплаты:");
-        Shop.setCassa(Shop.getCassa()+scannerClient.nextInt());
+        Shop.setCassa(Shop.getCassa() + scannerClient.nextInt());
         System.out.println("Добавлять будете?");
-        if (scannerClient.next().equals("да")) Shop.setCassa(Shop.getCassa()+scannerClient.nextInt());
+        if (scannerClient.next().equals("да")) Shop.setCassa(Shop.getCassa() + scannerClient.nextInt());
 
     }
 
@@ -76,6 +67,4 @@ class Client implements Clients {
         }
         return sum;
     }
-
-
 }
