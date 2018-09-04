@@ -6,6 +6,15 @@ import java.util.Scanner;
 import java.util.Set;
 
 class Shop {
+    private static int cassa = 0;
+
+    public static int getCassa() {
+        return cassa;
+    }
+
+    public static void setCassa(int cassa) {
+        Shop.cassa = cassa;
+    }
 
     Scanner scannerShop = new Scanner(System.in);
 

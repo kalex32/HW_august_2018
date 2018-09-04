@@ -49,8 +49,8 @@ class Client implements Clients {
                         "1. Добавить" + "\n" +
                         "2. Нет");
                 if (scannerClient.nextInt() != 1) {
-                    cart.add(new Payment());
-                    for (Product p : cart) System.out.println(p.toString());
+//                    cart.add(new Payment());
+//                    for (Product p : cart) System.out.println(p.toString());
                     break;
                 }
             }
