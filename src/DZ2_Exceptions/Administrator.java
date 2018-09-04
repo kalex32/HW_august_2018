@@ -7,6 +7,8 @@ import static DZ2_Exceptions.Client.cart;
 
 class Administrator implements Employees {
     private String nameAdmin;
+    static ArrayList<String> blackList = new ArrayList<>();
+
 
     {
         System.out.println("Введите имя Администратора:");
@@ -21,6 +23,10 @@ class Administrator implements Employees {
     String getNameAdmin() {
         return nameAdmin;
     }
+
+//    public static ArrayList<String> getBlackList() {
+//        return blackList;
+//    }
 
     static ArrayList<Product> products = new ArrayList<>();
 
@@ -52,12 +58,12 @@ class Administrator implements Employees {
         if (Client.sumCart(cart) - Shop.getCassa() <= 0) {
             System.out.println("Поздравляем с покупкой!!!");
             Shop.setCassa(0);
-        }
-        else toAddToTheBlackList();
+        } else System.out.println("Вы не выполнили условия сделки, добавляем Вас в \"черный список\" ");
+        toAddToTheBlackList(blackList);
     }
 
-    void toAddToTheBlackList() {
-
+    static void toAddToTheBlackList(ArrayList<String> blacklist) {
+        blacklist.add(Client.getNameClient());
     }
 
 //    static ArrayList p() {

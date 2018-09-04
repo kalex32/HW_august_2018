@@ -87,8 +87,10 @@ class Shop {
 
     void toChooseClient() {
         Client client = new Client();
-//        if (clients.add(client)) {
-
+       if (Administrator.blackList.contains(Client.getNameClient())){
+           System.out.println("Вы в \"черном списке\"");
+           toChooseClient();
+       }
         for (; ; ) {
             System.out.println();
             System.out.println("Выберите пункт меню:" + "\n" +
@@ -123,7 +125,7 @@ class Shop {
         System.out.println("Выберите пункт меню:" + "\n" +
                 "1. Добавить товар в магазин" + "\n" +
                 "2. Зарегистрировать продажу" + "\n" +
-                "3. Добавить покупателя в черный список" + "\n" +
+//                "3. Добавить покупателя в черный список" + "\n" +
                 "4. Выход");
         System.out.println();
         try {
@@ -134,9 +136,9 @@ class Shop {
                 case 2:
                     administrator.toRegisterSale();
                     break;
-                case 3:
-                    administrator.toAddToTheBlackList();
-                    break;
+//                case 3:
+//                    administrator.toAddToTheBlackList();
+//                    break;
                 case 4:
                     System.exit(0);
                     break;
