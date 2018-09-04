@@ -3,6 +3,8 @@ package DZ2_Exceptions;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static DZ2_Exceptions.Client.cart;
+
 class Administrator implements Employees {
     private String nameAdmin;
 
@@ -42,7 +44,16 @@ class Administrator implements Employees {
 
     @Override
     public void toRegisterSale() {
-
+        System.out.println("Регистрация продажи");
+        System.out.println();
+        System.out.println("Сумма покупок клиента " + Client.getNameClient() + ": " + Client.sumCart(cart));
+        System.out.println();
+        System.out.println("Сумма покупок клиента " + Client.getNameClient() + ": " + Shop.getCassa());
+        if (Client.sumCart(cart) - Shop.getCassa() <= 0) {
+            System.out.println("Поздравляем с покупкой!!!");
+            Shop.setCassa(0);
+        }
+        else toAddToTheBlackList();
     }
 
     void toAddToTheBlackList() {

@@ -8,8 +8,8 @@ import java.util.Set;
 import static DZ2_Exceptions.Administrator.products;
 
 class Client implements Clients {
-    private String nameClient;
-    ArrayList<Product> cart;
+    private static String nameClient;
+    static ArrayList<Product> cart;
 
     {
         System.out.println("Введите имя");
@@ -18,16 +18,16 @@ class Client implements Clients {
     private Scanner scannerClient = new Scanner(System.in);
 
     Client() {
-        this.nameClient = scannerClient.nextLine();
+        nameClient = scannerClient.nextLine();
         cart = new ArrayList<>();
 
     }
 
-    public String getNameClient() {
+    public static String getNameClient() {
         return nameClient;
     }
 
-//    ArrayList<Product> cart = new ArrayList<>();
+    //    ArrayList<Product> cart = new ArrayList<>();
 //    Administrator administrator = new Administrator();
 
     @Override
@@ -61,10 +61,15 @@ class Client implements Clients {
 
     @Override
     public void toPay() {
+        System.out.println("Сумма Ваших покупок: "+sumCart(cart));
+        System.out.println("Введите сумму оплаты:");
+        Shop.setCassa(Shop.getCassa()+scannerClient.nextInt());
+        System.out.println("Добавлять будете?");
+        if (scannerClient.next().equals("да")) Shop.setCassa(Shop.getCassa()+scannerClient.nextInt());
 
     }
 
-    int sumCart(ArrayList<Product> cart) {
+    static int sumCart(ArrayList<Product> cart) {
         int sum = 0;
         for (Product i : cart) {
             sum += i.getPrice();
